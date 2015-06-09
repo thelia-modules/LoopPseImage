@@ -19,6 +19,7 @@ use Thelia\Core\Template\Element\LoopResult;
 use Thelia\Core\Template\Loop\Argument\Argument;
 use Thelia\Core\Template\Loop\Argument\ArgumentCollection;
 use Thelia\Model\ProductSaleElementsProductImageQuery;
+use Propel\Runtime\ActiveQuery\Criteria;
 
 /**
  * Class ProductSaleElementsImage
@@ -118,7 +119,7 @@ class ProductSaleElementsImage extends BaseLoop implements PropelSearchLoopInter
                     $query
                         ->useProductImageQuery()
                         ->orderByPosition()
-                        ->endUse()
+                        ->endUse(Criteria::ASC)
                     ;
                     break;
 
@@ -126,7 +127,7 @@ class ProductSaleElementsImage extends BaseLoop implements PropelSearchLoopInter
                     $query
                         ->useProductImageQuery()
                         ->orderByPosition()
-                        ->endUse()
+                        ->endUse(Criteria::DESC)
                     ;
                     break;
             }
